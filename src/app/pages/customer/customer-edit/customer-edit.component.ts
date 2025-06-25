@@ -99,57 +99,20 @@ export class CustomerEditComponent implements OnInit{
   }
 
   breadcrumb: PoBreadcrumb = {
-    items: [
-      {label: 'Home', link: '/'},
-      {label: 'Clientes',link: '/customer-list'},
-      {label: 'Alterar'}
-    ]
+    items: [{label: 'Home', link: '/'},{label: 'Clientes',link: '/customer-list'},{label: 'Alterar'}]
   }
 
   editFields: Array<PoDynamicFormField> = [
-    {
-      property: 'codigo',
-      divider:'Identificação',
-      key:true,
-      required:true,
-      readonly:true,
-    },{
-      property: 'loja',
-      key:true,
-      required:true,
-      readonly:true,
-    },{
-      property: 'status',
-      required: true,
-      type: 'boolean',
-      booleanTrue: 'Ativo',
-      booleanFalse: 'Inativo',
-    },{
-      property: 'pessoa',
-    },{
-      property: 'nome',
-      required: true,
-      gridColumns: 12,
-    },{
-      property: 'endereco',
-      divider: 'Endereço',
-      required: true,
-      gridColumns: 12,
-    },{
-      property: 'cep',
-      required: true,
-    },{
-      property: 'bairro',
-      required: true,
-    },{
-      property: 'estado',
-      required: true,
-      /*options:['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO','EX']*/
-      optionsService: `${environment.urlListaEstados}`,
-    },{
-      property: 'cidade',
-      required:true,
-      optionsService: this.getUrlCidades(),
-    }
+    {property: 'codigo',divider:'Identificação',key:true,required:true,readonly:true,},
+    {property: 'loja',key:true,required:true,readonly:true,},
+    {property: 'status',required: true,type: 'boolean',booleanTrue: 'Ativo',booleanFalse: 'Inativo',},
+    {property: 'pessoa',},
+    {property: 'nome',required: true,gridColumns: 12,},
+    {property: 'endereco',divider: 'Endereço',required: true,gridColumns: 12,},
+    {property: 'cep',required: true,},
+    {property: 'bairro',required: true,},
+    {property: 'estado',required: true,optionsService: `${environment.urlListaEstados}`,},
+    /*options:['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO','EX']*/
+    {property: 'cidade',required:true,optionsService: this.getUrlCidades(),}
   ]
 }
